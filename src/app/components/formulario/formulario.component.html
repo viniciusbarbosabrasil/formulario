@@ -1,0 +1,105 @@
+<div class="container">
+    
+    <h2 class ="text-center mb-5">{{"Cyber News" | uppercase}} </h2>
+    
+    <div class="row">
+
+        <p>Caso queira conhecer mais sobre a área de cybersecurity, inscreva-se na news-letter semanal. Enviaremos as últimas notícias sobre o mundo de segurança da informação, novas vulnerabilidades, oportunidades de desenvolvimento e muito mais</p>
+
+    </div>
+
+    <div class="col-md-6 offset-md-3">
+
+        <div class="form-group">
+
+            <label for="Nome">Nome</label>
+            <input type="text"  
+            class="form-control"
+            [(ngModel)]="Nome"
+            name = "Nome"
+            placeholder = "Digite o seu Nome Completo"
+            />
+
+            <label for="Email">Email</label>
+            <input type="email"
+            class="form-control" 
+            [(ngModel)]="Email"
+            name = "Email"
+            aria-describedby="Help"
+            placeholder = "Digite email"
+            />
+
+        </div>
+
+        <form #f ="ngForm">
+
+            <div class="form-group">
+
+                <label for="cep">CEP:</label>                    
+                <input type="text"  
+                class="form-control"
+                id="cep"
+                name = "cep"
+                [(ngModel)] = "cep"
+                (blur)="consultaCep(f.value, f)"
+                placeholder = "Digite o CEP"
+                />
+
+                <label for="logradouro">LOGRADOURO</label>                    
+                <input type="text"  
+                class="form-control"
+                id="logradouro"
+                name = "logradouro"
+                [(ngModel)] = "logradouro"
+                placeholder = ""
+                disabled
+                />
+
+                <label for="bairro">BAIRRO</label>                    
+                <input type="text"  
+                class="form-control"
+                id="bairro"
+                name = "bairro"
+                [(ngModel)] = "bairro"
+                placeholder = ""
+                disabled
+                />                    
+
+                <label for="cidade">CIDADE</label>                    
+                <input type="text"  
+                class="form-control"
+                id="cidade"
+                name = "cidade"
+                [(ngModel)] = "cidade"
+                placeholder = ""
+                disabled
+                />
+
+                <label for="uf">UF</label>                    
+                <input type="text"  
+                class="form-control"
+                id="uf"
+                name = "uf"
+                [(ngModel)] = "uf"
+                placeholder = ""
+                disabled
+                />
+
+                <small id="Help" 
+                    class="form-text text-muted">
+                    Todos seus dados serão mantidos em sigilo e seguros  
+                </small>
+
+                <br><br>
+                <div class="col-md-6 offset-md-5">
+                    <a class="btn btn-primary"  
+                    [href]="'mailto:cybernews@cyber.com.br&subject=Cadastro Cyber News&body=Olá, Gostaria de me cadastrar para receber o conteúdo da Cyber News:  %0D%0A%0D%0ANome: ' + Nome + ';%0D%0A%0D%0AEmail: ' + Email + ';%0D%0A%0D%0ACEP: '+ cep +';%0D%0A%0D%0ACIDADE: '+ cidade +';%0D%0A%0D%0AUF: ' + uf + '%0D%0A%0D%0AAtenciosamente!'">Cadastrar</a>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
